@@ -1,19 +1,34 @@
-const elixir = require('laravel-elixir');
+var elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
+var bowerDir = './bower_components/';
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application as well as publishing vendor resources.
- |
- */
+elixir(function(mix) {
 
-elixir((mix) => {
+    var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+
     mix.sass('app.scss')
-       .webpack('app.js');
+        .copy(bootstrapPath + '/fonts', 'public/fonts')
+        .copy(bootstrapPath + '/fonts', 'public/fonts')
+        .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js');
+
+    mix.browserify('app.js');
+
+    mix.styles([
+        'font-awesome/css/font-awesome.min.css',
+        'sweetalert2/dist/sweetalert2.min.css',
+        'select2-bootstrap-theme/dist/select2-bootstrap.css',
+        'sb-admin-2/dist/css/sb-admin-2.css',
+    ], 'public/css/packages.css', bowerDir);
+
+    mix.scripts([
+        'es6-promise/promise.min.js',
+        'sweetalert2/dist/sweetalert2.min.js',
+        'es6-promise-polyfill/promise.min.js',
+        'select2/dist/js/select2.min.js',
+        'sb-admin-2/dist/js/sb-admin-2.min.js',
+    ], 'public/js/all.js', bowerDir);
+
+    mix.copy('bower-components/font-awesome/fonts', 'public/fonts');
+
 });
+
