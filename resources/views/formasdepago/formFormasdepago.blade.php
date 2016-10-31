@@ -50,7 +50,7 @@
 
 
 <div class="form-group{{ $errors->has('cuit') ? ' has-error' : '' }} camposBanco">
-    {{Form::text('cuit', null, ['class' => 'form-control', 'maxlength'=>'60', 'placeholder' => 'CUIT'])}}
+    {{Form::text('cuit', null, ['class' => 'form-control', 'maxlength'=>'60', 'placeholder' => 'CUIT', 'id' => 'cuit'])}}
 
     @if ($errors->has('cuit'))
         <span class="help-block">
@@ -61,7 +61,7 @@
 
 
 <div class="form-group{{ $errors->has('cbu') ? ' has-error' : '' }} camposBanco">
-    {{Form::text('cbu', null, ['class' => 'form-control', 'maxlength'=>'60', 'placeholder' => 'CBU'])}}
+    {{Form::text('cbu', null, ['class' => 'form-control', 'maxlength'=>'60', 'placeholder' => 'CBU', 'id' => 'cbu'])}}
 
     @if ($errors->has('cbu'))
         <span class="help-block">
@@ -106,8 +106,18 @@
 {{-- Javascript --}}
 @push('scripts')
 <script>
+    if($('#tipofpago').val() != 'B'){
+        $('.camposBanco').hide('slow');
+    }
     $('#tipofpago').change(function () {
-        console.log($(this).val());
+        if($(this).val() != 'B'){
+            $('.camposBanco').hide('slow');
+            $('input:checkbox').removeAttr('checked');
+            $('#cbu').val('');
+            $('#cuit').val('');
+        }else{
+            $('.camposBanco').show('slow');
+        }
     })
 </script>
 @endpush
