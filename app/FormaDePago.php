@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class FormaDePago extends Model
 {
      protected $table = 'formas_de_pago';
+
+     protected $guarded = ['id'];
 }

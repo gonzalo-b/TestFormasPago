@@ -24,8 +24,10 @@ elixir(function(mix) {
         'es6-promise/promise.min.js',
         'sweetalert2/dist/sweetalert2.min.js',
         'es6-promise-polyfill/promise.min.js',
+        'sb-admin-2/metisMenu/metisMenu.min.js',
         'select2/dist/js/select2.min.js',
         'sb-admin-2/dist/js/sb-admin-2.min.js',
+        'sb-admin-2/vendor/metisMenu/metisMenu.min.js',
     ], 'public/js/all.js', bowerDir);
 
     mix.copy('bower-components/font-awesome/fonts', 'public/fonts');

@@ -14,8 +14,10 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
+        DB::table('users')->truncate();
+
         DB::table('users')->insert([
-            'name' => $faker->name,
+            'name' => 'Cristina',
             'email' => 'admin@mail.com',
             'password' => bcrypt('admin@mail.com')
         ]);

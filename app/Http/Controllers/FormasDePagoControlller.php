@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\FormaDePago;
+use App\Http\Requests\FormaDePagoRequest;
 use Illuminate\Http\Request;
 
 class FormasDePagoControlller extends Controller
 {
     public function index()
     {
-        return view('formasDePago.index');
+        return view('formasdepago.index');
     }
 
 
     public function create()
     {
-        return view('formasDePago.create');
+        return view('formasdepago.create');
     }
 
     public function store(FormaDePagoRequest $request)
@@ -30,13 +31,13 @@ class FormasDePagoControlller extends Controller
     public function show(FormaDePago $formadepago)
     {
         $data['formadepago'] = $formadepago;
-        return view('formasDePago.show', $data);
+        return view('formasdepago.show', $data);
     }
 
     public function edit(FormaDePago $formadepago)
     {
         $data['formadepago'] = $formadepago;
-        return view('formasDePago.edit', $data);
+        return view('formasdepago.edit', $data);
     }
 
     public function update(FormaDePagoRequest $request,FormaDePago $formadepago)

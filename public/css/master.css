@@ -1,0 +1,38 @@
+.center{
+    text-align: center;
+}
+.table-actions > tbody > tr > td:nth-last-child(2), .table-actions-view > tbody > tr > td:nth-last-child(3){
+    border-right: none !important;
+    border-left: none !important;
+    text-align: center;
+}
+.table-actions > tbody > tr > td:nth-last-child(1){
+    border-right: none !important;
+    border-left: none !important;
+    text-align: center;
+}
+
+.table-actions > tbody > tr > td:nth-last-child(3){
+    border-right: none !important;
+    border-left: none !important;
+    text-align: center;
+}
+#page-wrapper{
+    margin-top:-22px;
+}
+.formHeader{
+    text-align: center;
+    padding: 30px 0px 10px 0px;
+}
+.mRight58{
+    margin-left:58px !important;
+}
+.mRight10{
+    margin-left:10px !important;
+}
+.separte{
+    margin-right:20px;
+}
+.top-buffer{
+    margin-top:30px;
+}
