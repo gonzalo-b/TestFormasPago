@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('formasdepago', 'FormasDePagoControlller');
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('formasdepago', 'FormasDePagoControlller');
+});

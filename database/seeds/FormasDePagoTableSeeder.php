@@ -18,33 +18,33 @@ class FormasDePagoTableSeeder extends Seeder
         DB::table('formas_de_pago')->truncate();
 
         DB::table('formas_de_pago')->insert([
-            'detalle' => $faker->sentence(3),
+            'detalle' => 'Banco Citi',
             'tipofpago' => 'B',
             'diferido' => '1',
             'impcheque' => '1',
         ]);
 
         DB::table('formas_de_pago')->insert([
-            'detalle' => $faker->sentence(3),
+            'detalle' => 'Banco Macro',
             'tipofpago' => 'B',
             'diferido' => '1',
             'impcheque' => '0',
         ]);
 
         DB::table('formas_de_pago')->insert([
-            'detalle' => $faker->sentence(3),
+            'detalle' => 'Caja 1',
             'tipofpago' => 'E',
         ]);
 
         DB::table('formas_de_pago')->insert([
-            'detalle' => $faker->sentence(3),
+            'detalle' => 'Banco Hipotecario',
             'tipofpago' => 'B',
             'diferido' => '1',
             'impcheque' => '0',
         ]);
 
         DB::table('formas_de_pago')->insert([
-            'detalle' => $faker->sentence(3),
+            'detalle' => 'Caja Dolares',
             'tipofpago' => 'M',
         ]);
     }

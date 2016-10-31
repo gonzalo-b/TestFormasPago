@@ -22,7 +22,7 @@
 }
 .formHeader{
     text-align: center;
-    padding: 30px 0px 10px 0px;
+    padding: 0px 0px 10px 0px;
 }
 .mRight58{
     margin-left:58px !important;
@@ -35,4 +35,16 @@
 }
 .top-buffer{
     margin-top:30px;
+}
+.top-pad-buffer{
+    padding-top:30px;
+}
+#notificationsBox{
+    padding-top:50px;
+}
+h1.page-header{
+    margin-top:10px;
+}
+.final{
+    margin: 10px 0px 50px 0px;
 }

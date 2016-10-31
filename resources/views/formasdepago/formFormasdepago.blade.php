@@ -17,7 +17,7 @@
 <div class="form-group{{ $errors->has('tipofpago') ? ' has-error' : '' }}">
     <label> Tipo de Forma de Pago</label>
 
-    {{Form::select('tipofpago', config('settings.tipos-formas-depago'), null, ['class' => 'form-control'])}}
+    {{Form::select('tipofpago', config('settings.tipos-formas-depago'), null, ['class' => 'form-control', 'id' => 'tipofpago'])}}
 
     @if ($errors->has('tipofpago'))
         <span class="help-block">
@@ -26,7 +26,7 @@
     @endif
 </div>
 
-<div class="form-group{{ $errors->has('diferido') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('diferido') ? ' has-error' : '' }} camposBanco">
     <label> Permite emisión de cheque diferidos?</label>
     {{Form::checkbox('diferido', true ,$formadepago->diferido, ['class' => 'mRight58'])}}
 
@@ -37,7 +37,7 @@
     @endif
 </div>
 
-<div class="form-group{{ $errors->has('impcheque') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('impcheque') ? ' has-error' : '' }} camposBanco">
     <label>Permite impresión de cheque por el sistema?</label>
     {{Form::checkbox('impcheque', true ,$formadepago->impcheque, ['class' => 'mRight10'])}}
 
@@ -49,7 +49,7 @@
 </div>
 
 
-<div class="form-group{{ $errors->has('cuit') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('cuit') ? ' has-error' : '' }} camposBanco">
     {{Form::text('cuit', null, ['class' => 'form-control', 'maxlength'=>'60', 'placeholder' => 'CUIT'])}}
 
     @if ($errors->has('cuit'))
@@ -60,7 +60,7 @@
 </div>
 
 
-<div class="form-group{{ $errors->has('cbu') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('cbu') ? ' has-error' : '' }} camposBanco">
     {{Form::text('cbu', null, ['class' => 'form-control', 'maxlength'=>'60', 'placeholder' => 'CBU'])}}
 
     @if ($errors->has('cbu'))
@@ -93,7 +93,7 @@
 </div>
 
 <div class="form-group">
-    <div class="col-lg-12 center">
+    <div class="col-lg-12 center final">
         <a href="{{ url('formasdepago')  }}" class="btn btn-danger btn-md separte">
             CANCELAR
         </a>
@@ -106,6 +106,8 @@
 {{-- Javascript --}}
 @push('scripts')
 <script>
-
+    $('#tipofpago').change(function () {
+        console.log($(this).val());
+    })
 </script>
 @endpush

@@ -27,6 +27,15 @@
 <div id="wrapper">
     @include('partials/navigation')
     <div id="page-wrapper">
+        <div class="row" id="notificationsBox">
+            <div class="col-md-12 alertBox">
+                <div class="row">
+                    @unless(isset($noNotifications))
+                        @include('partials.notifications')
+                        @endif
+                </div>
+            </div>
+        </div>
         @yield('content')
     </div>
 </div>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Lista de Formas de Pago
+            <h1 class="page-header"> Formas de Pago
                 <a href="{{ url('/formasdepago/create') }}" class="btn btn-sm btn-primary pull-right"><i class="fa fa-plus-circle"></i> Nueva Forma de Pago</a>
             </h1>
         </div>
