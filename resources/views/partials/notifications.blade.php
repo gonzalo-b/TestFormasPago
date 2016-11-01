@@ -15,7 +15,7 @@
 @if (isset($errors) && count($errors) > 0)
   <div class="animated fadeIn alert alert-danger alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Whoops! Something went wrong!</strong>
+    {{--<strong>Whoops! Something went wrong!</strong>--}}
     <ul>
       @foreach ($errors->all() as $error)
       <li>{{ str_replace('-',' ',$error) }}</li>
@@ -26,7 +26,7 @@
 @if ($message = session()->get('warning'))
   <div class="animated fadeIn alert alert-warning alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Warning:</strong> {!! $message !!}
+    <strong>Precaución:</strong> {!! $message !!}
   </div>
   {{ session()->forget('warning') }}
 @endif
