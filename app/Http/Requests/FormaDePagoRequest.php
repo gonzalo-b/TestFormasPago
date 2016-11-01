@@ -34,6 +34,9 @@ class FormaDePagoRequest extends FormRequest
             {
                 return [
                     'detalle' => 'required|max:255|unique:formas_de_pago',
+                    'cuenta_contable' => 'max:255',
+                    'cuit' => 'cuit',
+                    'cbu' => 'cbu',
                 ];
             }
             case 'PUT':
@@ -41,6 +44,9 @@ class FormaDePagoRequest extends FormRequest
             {
                 return [
                     'detalle' => 'required|max:255|unique:formas_de_pago,detalle,'. $this->formasdepago->id,
+                    'cuenta_contable' => 'max:255',
+                    'cuit' => 'cuit',
+                    'cbu' => 'cbu',
                 ];
             }
             default:break;
