@@ -15,11 +15,11 @@
                 <table width="100%" class="table table-striped table-bordered table-hover table-actions" id="dataTables-example">
                     <thead>
                     <tr>
-                        <th>Detalle</th>
-                        <th>Tipofpago</th>
-                        <th class="center">Diferido</th>
-                        <th class="center">Impcheque</th>
-                        <th>Cbu</th>
+                        <th>@sortablelink ('detalle', 'Detalle')</th>
+                        <th>@sortablelink ('tipofpago', 'Tipofpago')</th>
+                        <th class="center"> @sortablelink ('diferido', 'Diferido')</th>
+                        <th class="center"> @sortablelink ('impcheque', 'Impcheque')</th>
+                        <th> @sortablelink ('cbu', 'Cbu')</th>
                         <th colspan="3"></th>
                     </tr>
                     </thead>

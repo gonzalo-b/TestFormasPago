@@ -29,7 +29,7 @@ class ViewComposerServiceProvider extends ServiceProvider
             $view->with('url', true);
         });
         view()->composer('formasdepago.index', function ($view) {
-            $view->with('formasdepago', FormaDePago::orderBy('created_at')->get());
+            $view->with('formasdepago', FormaDePago::sortable(['detalle'])->paginate($this->paginate_limit));
         });
     }
 
