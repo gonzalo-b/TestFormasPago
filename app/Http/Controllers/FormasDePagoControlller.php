@@ -24,7 +24,7 @@ class FormasDePagoControlller extends Controller
         $formadepago = new FormaDePago($request->all());
         $formadepago->save();
 
-        session()->put('success', 'Forma de pago was successfully created.');
+        session()->put('success', 'Forma de pago creada correctamente');
         return redirect('formasdepago');
     }
 
